@@ -32,6 +32,9 @@
 ***********************************************************************/
 
 /**********************************************************************/
+
+typedef unsigned __int32 u32;
+
 static int wpa_driver_mediatek_set_country(void *priv, const char *alpha2_arg)
 {
     struct i802_bss *bss = priv;
@@ -164,8 +167,7 @@ int wpa_driver_nl80211_driver_cmd(void *priv, char *cmd, char *buf,
             }
         }
     } else if (os_strcasecmp(cmd, "start") == 0) {
-        if (ret = linux_set_iface_flags(drv->global->ioctl_sock,
-            drv->first_bss->ifname, 1)) {
+        if (ret == linux_set_iface_flags(drv->global->ioctl_sock, drv->first_bss->ifname, 1)) {
             wpa_printf(MSG_INFO, "nl80211: Could not set interface UP, ret=%d \n", ret);
         } else {
             wpa_msg(drv->ctx, MSG_INFO, "CTRL-EVENT-DRIVER-STATE STARTED");
@@ -179,8 +181,7 @@ int wpa_driver_nl80211_driver_cmd(void *priv, char *cmd, char *buf,
             wpa_printf(MSG_INFO, "nl80211: not associated, no need to deauthenticate \n");
         }
 
-        if (ret = linux_set_iface_flags(drv->global->ioctl_sock,
-            drv->first_bss->ifname, 0)) {
+        if (ret == linux_set_iface_flags(drv->global->ioctl_sock, drv->first_bss->ifname, 0)) {
             wpa_printf(MSG_INFO, "nl80211: Could not set interface Down, ret=%d \n", ret);
         } else {
             wpa_msg(drv->ctx, MSG_INFO, "CTRL-EVENT-DRIVER-STATE STOPPED");
