@@ -33,7 +33,7 @@
 
 /**********************************************************************/
 
-typedef unsigned __int32 u32;
+typedef unsigned int u32;
 
 static int wpa_driver_mediatek_set_country(void *priv, const char *alpha2_arg)
 {
