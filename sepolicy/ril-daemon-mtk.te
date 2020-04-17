@@ -4,7 +4,7 @@ type ril-daemon-mtk, domain;
 init_daemon_domain(ril-daemon-mtk)
 net_domain(ril-daemon-mtk)
 
-vndbinder_use(ril-daemon-mtk)
+#vndbinder_use(ril-daemon-mtk)
 
 allow ril-daemon-mtk ccci_device:chr_file rw_file_perms;
 allow ril-daemon-mtk radio_device:dir search;
