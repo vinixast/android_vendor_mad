@@ -25,9 +25,6 @@ type M4U_device_device, dev_type;
 type mtk_smi_device, dev_type;
 type ebc_device, dev_type;
 
-# GPS
-type gps_device, dev_type;
-
 # SPM
 type spm_device, dev_type;
 
