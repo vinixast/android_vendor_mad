@@ -1,4 +1,4 @@
-vndbinder_use(hal_camera_default);
+#vndbinder_use(hal_camera_default);
 
 # NVRAM
 allow hal_camera_default nvdata_file:dir rw_dir_perms;
