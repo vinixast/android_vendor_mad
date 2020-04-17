@@ -76,7 +76,7 @@ endif
 
 # SELinux
 BOARD_SEPOLICY_DIRS := \
-    vendor/mad/sepolicy
+    vendor/mad/sepolicy_2
 
 # DEXPREOPT
 ifneq ($(TARGET_BUILD_VARIANT),user)
